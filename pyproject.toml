@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "entropy-rlaf"
+version = "0.2.0"
+description = "Environment-grounded alignment framework for agentic LLM workflows"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "Apache-2.0"}
+authors = [{name = "Entropy-RLAF Contributors"}]
+dependencies = [
+  "pydantic>=2.7",
+  "opentelemetry-api>=1.27.0",
+  "opentelemetry-sdk>=1.27.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0",
+  "pytest-asyncio>=0.23",
+  "mypy>=1.10",
+  "ruff>=0.5",
+  "black>=24.0",
+]
+
+[tool.setuptools]
+packages = ["entropy_rlaf"]
+
+[tool.setuptools.package-dir]
+entropy_rlaf = "entropy_rlaf"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+warn_unused_ignores = true
+warn_return_any = true
